@@ -1,0 +1,26 @@
+server:
+  port: 9000
+#配置服务名称
+spring:
+  application:
+    name: springcloud-api-gateway
+
+#配置路由规则
+zuul:
+  routes:
+    springcloud-feign: /api/**
+  #忽略掉某一些接口路径
+  #ignored-patterns: /**/hello/**
+  #配置网关路由前缀
+  prefix: /sms
+  #禁用zuul默认的错误过滤器,使用自定义错误过滤器
+  SendErrorFilter:
+    error:
+      disable: true
+#配置API网关到注册中心上，API网关也将作为一个服务注册到eureka-server上
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8070:8070/eureka/,http://eureka8071:8071/eureka/
+
+
