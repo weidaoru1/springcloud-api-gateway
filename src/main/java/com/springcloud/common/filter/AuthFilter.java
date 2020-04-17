@@ -70,7 +70,7 @@ public class AuthFilter extends ZuulFilter {
             rc.addZuulResponseHeader("content-type","application/json;charset=utf-8");
             rc.setResponseBody("{\"success\":0" + ",\"code\":401" + ",\"message\":\"" + "非法访问\"}");
         }
-        // 向 RequestContext 对象中添加数据
+        // 向 RequestContext 对象中添加自己想要的数据
         rc.set("filterName","PreFilter");
 
         return null;
