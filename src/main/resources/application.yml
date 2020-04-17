@@ -21,6 +21,6 @@ zuul:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka8070:8070/eureka/,http://eureka8071:8071/eureka/
+      defaultZone: http://admin:admin123@eureka8070:8070/eureka/,http://admin:admin123@eureka8071:8071/eureka/
 
 
